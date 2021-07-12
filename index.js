@@ -23,7 +23,7 @@ client.on('message', message => {
 		message.channel.send(`Command name: ${command}\nArguments: ${args}`);
 		message.channel.send(`First argument: ${args[0]}`);
 	} else if (command === 'sweep') {
-		message.channel.bulkDelete(5);
+		message.channel.bulkDelete(50);
 	} else if (command === 'help') {
 		message.reply(`my name is Chandra. I don't know how to do much *yet*, but my developer is hard at work to make me the best bot I can be.`)
 		message.channel.send(`Here are a few commands that I understand:\n\n!server\n!user\n!ping`)
@@ -34,7 +34,7 @@ client.on('message', message => {
 		} else if (sides === 4 || sides === 6 || sides === 8 || sides === 10 || sides === 12 || sides === 20) {
 			return message.channel.send(`Rolling a d${sides}. Your roll is ${Math.floor(Math.random() * sides) + 1}.`);
 		} else {
-			return message.reply('please roll a valid D&D die. I accept d4, d6, d8, d10, d12, or d20.')
+			return message.reply('I can only accept a 4, 6, 8, 10, 12, or 20-sided dice.')
 		}
 	}
 });

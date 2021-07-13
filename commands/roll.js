@@ -9,6 +9,6 @@ module.exports = {
             return message.channel.send(`Rolling a d${sides}. Your roll is ${Math.floor(Math.random() * sides) + 1}.`);
         } else {
             return message.reply('I can only accept a 4, 6, 8, 10, 12, or 20-sided dice.')
-	}
+	    }
     },
 };

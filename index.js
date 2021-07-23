@@ -17,7 +17,7 @@ client.once('ready', () => {
 });
 
 client.on('message', message => {
-
+	console.log(`${message.author.tag} sent '${message.content}' in the #${message.channel.name} channel.`);
 	if (!message.content.startsWith(prefix) || message.author.bot) return;
 
 	const args = message.content.slice(prefix.length).trim().split(/ +/);
@@ -29,9 +29,8 @@ client.on('message', message => {
 		client.commands.get(command).execute(message, args);
 	} catch (error) {
 		console.error(error);
-		message.reply('there was an error trying to execute that command!');
+		message.reply('there was an error with that command.');
 	}
-
 });
 
 client.login(token);
